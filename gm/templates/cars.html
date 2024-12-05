@@ -1,0 +1,32 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Cars</title>
+    <style>
+
+    </style>
+</head>
+<link rel="stylesheet" href="{% static 'css/styl.css' %}">
+
+<body>
+    <header>
+        <h1>Our Cars</h1>
+    </header>
+    <div class="container">
+        {% for car in cars %}
+        <div class="car">
+            <img src="{{ car.photo.url }}" alt="Car Image">
+            <h2>Brand: {{ car.brend }}</h2>
+            <p>Model: {{ car.model }}</p>
+            <p>Color: {{ car.color }}</p>
+            <p>Probeg: {{ car.probeg }} km</p>
+            <p>Max Speed: {{ car.max_speed }} km/h</p>
+            <p class="price">Price: ${{ car.price }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Brands</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .container {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        .brand {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .brand h2 {
+            margin: 0 0 10px;
+            color: #333;
+        }
+        .brand p {
+            margin: 0;
+            color: #666;
+        }
+    </style>
+</head>
+<link rel="stylesheet" href="{% static 'css/styl.css' %}">
+<body>
+    <header>
+        <img src="{% static 'images/logo.jpg'%}" width="100px">
+        <h1>Car Brands</h1>
+    </header>
+    <div class="container">
+        {% for brend in brends %}
+        <div class="brand">
+            <h2>{{ brend.brend_name }}</h2>
+        </div>
+        {% endfor %}
+    </div>
+<sript src="{% static 'js/script.js' %}"></sript>
+</body>
+</html>
